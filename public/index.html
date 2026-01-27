@@ -1,43 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <title>Ajay Shukla | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Shukla | Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --accent: #00d4ff;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--light); color: var(--dark); overflow-x: hidden; }
+
+        /* Navigation */
+        header {
+            position: fixed; width: 100%; top: 0; padding: 20px 10%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px);
+            z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 1.6rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; }
+        nav a { margin-left: 30px; text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; position: relative; }
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            color: white; padding: 0 10%;
+        }
+        .hero-content h1 { font-size: 4.5rem; margin-bottom: 15px; background: linear-gradient(to right, #fff, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { font-size: 1.4rem; opacity: 0.8; margin-bottom: 35px; }
+        
+        .btn-glow {
+            padding: 15px 40px; background: var(--primary); color: white; border-radius: 50px;
+            text-decoration: none; font-weight: 600; box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+            transition: 0.4s; display: inline-block;
+        }
+        .btn-glow:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(37, 99, 235, 0.6); }
+
+        /* Sections */
+        section { padding: 100px 10%; scroll-margin-top: 80px; }
+        .title { text-align: center; font-size: 2.8rem; margin-bottom: 60px; font-weight: 700; }
+        .title span { color: var(--primary); }
+
+        /* About Cards */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .info-card { background: white; padding: 40px; border-radius: 20px; box-shadow: var(--card-shadow); border-top: 5px solid var(--primary); }
+
+        /* SKILLS SECTION (NEW & IMPROVED) */
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+            gap: 25px; 
+        }
+        .skill-tag {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #eee;
+        }
+        .skill-tag i { font-size: 2.5rem; color: var(--primary); transition: 0.3s; }
+        .skill-tag:hover {
+            transform: translateY(-10px);
+            background: var(--primary);
+            color: white;
+        }
+        .skill-tag:hover i { color: white; }
+
+        /* Contact Form */
+        .contact-box { max-width: 800px; margin: 0 auto; background: white; padding: 50px; border-radius: 30px; box-shadow: var(--card-shadow); }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; }
+        .submit-btn { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+
+        footer { background: var(--dark); color: white; text-align: center; padding: 50px; }
+
+        @media (max-width: 768px) { .hero-content h1 { font-size: 2.8rem; } nav { display: none; } }
+    </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="logo">AS</div>
-    <div>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact" class="btn">Work With Me</a>
-    </div>
-  </nav>
+    <header>
+        <div class="logo">AJAY.DEV</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <h1>AJAY <span>SHUKLA</span></h1>
-    <p>Web Developer | UI/UX | Firebase</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </section>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p>FULL STACK DEVELOPER</p>
+            <h1>Ajay Shukla</h1>
+            <p>Building Digital Experiences with Code.</p>
+            <a href="#contact" class="btn-glow">Let's Build Something</a>
+        </div>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Coming Soon...</p>
-  </section>
+    <section id="about">
+        <h2 class="title">About <span>Me</span></h2>
+        <div class="grid-container">
+            <div class="info-card">
+                <h3>Who am I?</h3>
+                <p style="margin-top:15px;">नमस्ते! मैं एक फुल स्टैक डेवलपर हूँ। मुझे ऐसी चीजें बनाना पसंद है जो इंटरनेट पर लाइव चलती हैं। कोडिंग के प्रति मेरा जुनून मुझे हर दिन कुछ नया सीखने के लिए प्रेरित करता है।</p>
+            </div>
+            <div class="info-card">
+                <h3>Education</h3>
+                <p style="margin-top:15px;"><strong>BCA Student</strong><br>मैं कंप्यूटर एप्लीकेशन में स्नातक (BCA) कर रहा हूँ और थ्योरी से ज्यादा प्रैक्टिकल प्रोजेक्ट्स पर विश्वास रखता हूँ।</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>HTML, CSS, JavaScript, Firebase, GitHub</p>
-  </section>
+    <section id="skills" style="background: #f1f5f9;">
+        <h2 class="title">My <span>Computer Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-tag"><i class="fab fa-html5"></i>HTML5</div>
+            <div class="skill-tag"><i class="fab fa-css3-alt"></i>CSS3</div>
+            <div class="skill-tag"><i class="fab fa-js"></i>JavaScript</div>
+            <div class="skill-tag"><i class="fab fa-react"></i>React JS</div>
+            <div class="skill-tag"><i class="fab fa-node-js"></i>Node.js</div>
+            <div class="skill-tag"><i class="fas fa-server"></i>Express.js</div>
+            <div class="skill-tag"><i class="fas fa-database"></i>MongoDB</div>
+            <div class="skill-tag"><i class="fas fa-table"></i>SQL</div>
+            <div class="skill-tag"><i class="fab fa-python"></i>Python</div>
+            <div class="skill-tag"><i class="fab fa-git-alt"></i>Git/GitHub</div>
+            <div class="skill-tag"><i class="fas fa-wind"></i>Tailwind CSS</div>
+            <div class="skill-tag"><i class="fas fa-code-branch"></i>DSA</div>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: ajayshukla9630@gmail.com</p>
-  </section>
+    <section id="contact">
+        <h2 class="title">Let's <span>Connect</span></h2>
+        <div class="contact-box">
+            <form>
+                <input type="text" placeholder="Your Full Name" required>
+                <input type="email" placeholder="Your Email Address" required>
+                <textarea rows="5" placeholder="Project details or message..."></textarea>
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2026 Ajay Shukla. Created for Innovation.</p>
+    </footer>
+
 </body>
 </html>
