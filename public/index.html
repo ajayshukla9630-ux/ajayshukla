@@ -6,6 +6,92 @@
     <title>Ajay Shukla | Full Stack Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>:root {
+            --primary: #2563eb;
+            --accent: #00d4ff;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--light); color: var(--dark); overflow-x: hidden; }
+
+        /* Navigation */
+        header {
+            position: fixed; width: 100%; top: 0; padding: 20px 10%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px);
+            z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 1.6rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; }
+        nav a { margin-left: 30px; text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; position: relative; }
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex; align-items: center; justify-content: center; text-align: center;
+            color: white; padding: 0 10%;
+        }
+        .hero-content h1 { font-size: 4.5rem; margin-bottom: 15px; background: linear-gradient(to right, #fff, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { font-size: 1.4rem; opacity: 0.8; margin-bottom: 35px; }
+        
+        .btn-glow {
+            padding: 15px 40px; background: var(--primary); color: white; border-radius: 50px;
+            text-decoration: none; font-weight: 600; box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+            transition: 0.4s; display: inline-block;
+        }
+        .btn-glow:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(37, 99, 235, 0.6); }
+
+        /* Sections */
+        section { padding: 100px 10%; scroll-margin-top: 80px; }
+        .title { text-align: center; font-size: 2.8rem; margin-bottom: 60px; font-weight: 700; }
+        .title span { color: var(--primary); }
+
+        /* About Cards */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .info-card { background: white; padding: 40px; border-radius: 20px; box-shadow: var(--card-shadow); border-top: 5px solid var(--primary); }
+
+        /* SKILLS SECTION (NEW & IMPROVED) */
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+            gap: 25px; 
+        }
+        .skill-tag {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #eee;
+        }
+        .skill-tag i { font-size: 2.5rem; color: var(--primary); transition: 0.3s; }
+        .skill-tag:hover {
+            transform: translateY(-10px);
+            background: var(--primary);
+            color: white;
+        }
+        .skill-tag:hover i { color: white; }
+
+        /* Contact Form */
+        .contact-box { max-width: 800px; margin: 0 auto; background: white; padding: 50px; border-radius: 30px; box-shadow: var(--card-shadow); }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; }
+        .submit-btn { width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+
+        footer { background: var(--dark); color: white; text-align: center; padding: 50px; }
+
+        @media (max-width: 768px) { .hero-content h1 { font-size: 2.8rem; } nav { display: none; } }
+    </style>
     
 </head>
 <body>
@@ -79,4 +165,5 @@
 
 </body>
 </html>
+
 
