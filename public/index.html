@@ -3,49 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Shukla Portfolio</title>
+    <title>AJAY SHUKLA Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
         body { background-color: #f4f7f6; color: #333; }
 
-        /* SAFED PATTI (Navbar) - Isme Naam aur Photo hai */
-        .white-patti { 
-            height: 60px; 
-            background-color: #ffffff; 
-            width: 100%; 
-            display: flex; 
-            align-items: center; 
-            padding: 0 20px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .nav-content {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            font-size: 18px;
-            color: #333;
-        }
-        .nav-photo {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background-color: #ddd; /* Photo ki jagah */
-            object-fit: cover;
-            border: 1px solid #ccc;
-        }
-
-        /* Blue Top Bar (Design ke liye) */
+        /* Blue Top Bar */
         .top-banner { height: 160px; background-color: #0056b3; width: 100%; }
 
         /* Main Container */
         .container { max-width: 800px; margin: -70px auto 40px; padding: 0 15px; }
 
-        /* HOME SECTION */
+        /* HOME SECTION - Photo aur Naam */
         .home-section { 
             background: #fff; 
             padding: 30px 20px; 
@@ -65,7 +35,7 @@
         .home-section h1 { margin-top: 15px; font-size: 26px; }
         .home-section p { color: #666; font-size: 16px; margin-top: 5px; }
 
-        /* ABOUT SECTION */
+        /* ABOUT SECTION - Information */
         .about-section { 
             background: #fff; 
             margin-top: 25px; 
@@ -74,4 +44,53 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
         }
         .about-section h2 { border-bottom: 2px solid #0056b3; display: inline-block; margin-bottom: 15px; padding-bottom: 5px; }
-        .about-section p { line-height: 1.6; font-size: 15px; color: #444
+        .about-section p { line-height: 1.6; font-size: 15px; color: #444; }
+
+        /* PHOTO GALLERY */
+        .gallery { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            margin-top: 25px; 
+        }
+        .gallery-card { 
+            background: #fff; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        }
+        .gallery-card img { width: 100%; height: 300px; object-fit: cover; display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="top-banner"></div>
+
+    <div class="container">
+        
+        <div class="home-section">
+            <img src="profile.jpg" alt="Vijay Tripathi" class="profile-img">
+            <h1>Vijay Tripathi <i class="fas fa-check-circle" style="color: #2196F3;"></i></h1>
+            <p>BCA Student | Web Developer</p>
+        </div>
+
+        <div class="about-section">
+            <h2>About Me</h2>
+            <p>
+                Main <b>AJAY SHUKLA</b> hoon, ek honhaar BCA student aur aspiring Web Developer. 
+                Mujhe clean aur user-friendly websites banana pasand hai. Main nayi technologies 
+                seekhne ke liye hamesha taiyar rehta hoon taaki digital duniya mein kuch naya kar sakoon.
+            </p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-card"><img src="photo1.jpg" alt="My Photo 1"></div>
+            <div class="gallery-card"><img src="photo2.jpg" alt="My Photo 2"></div>
+            <div class="gallery-card"><img src="photo3.jpg" alt="My Photo 3"></div>
+            <div class="gallery-card"><img src="photo4.jpg" alt="My Photo 4"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
