@@ -3,61 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Modern Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #0f172a;
-            --accent: #3b82f6;
-            --secondary: #2dd4bf;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --glass-bg: rgba(255, 255, 255, 0.45);
-            --glass-border: rgba(255, 255, 255, 0.3);
-        }
+    <title>Premium Portfolio | 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            cursor: none; /* Custom cursor ke liye default cursor hide kiya */
-        }
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
+    <nav class="navbar">
+        <div class="logo">MY<span>BRAND</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Connect</a></li>
+        </ul>
+        <div class="toggle-btn" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
-        /* --- ADVANCED ANIMATED BACKGROUND --- */
-        body {
-            background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #f1f5f9, #ffffff);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h3 class="reveal">Welcome to my world</h3>
+            <h1 class="reveal">I'm <span id="typewriter"></span></h1>
+            <p class="reveal">Crafting digital experiences with precision and creativity.</p>
+            <div class="hero-btns reveal">
+                <a href="#portfolio" class="btn primary">My Work</a>
+                <a href="#contact" class="btn secondary">Hire Me</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </header>
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="title" data-text="About Me">About Me</h2>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <p>Main ek enthusiastic developer hoon jo naye challenges se darta nahi. Safed aur clean design meri pehchan hai. Maine 50+ projects complete kiye hain jo speed aur aesthetics dono mein top hain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        /* --- CUSTOM CURSOR --- */
-        .cursor-dot, .cursor-outline {
-            position: fixed;
-            top: 0; left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-        }
-        .cursor-dot { width: 8px; height: 8px; background: var(--accent); }
-        .cursor-outline {
-            width: 40px; height: 40px;
-            border: 2px solid var(--accent);
-            transition: all
+    <section id="skills" class="section bg-soft">
+        <div class="container">
+            <h2 class="title" data-text="Expertise">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-item reveal">
+                    <span>HTML/CSS</span>
+                    <div class="bar"><div class="progress" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-item reveal">
+                    <span>JavaScript</span>
+                    <div class="bar"><div class="progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item reveal">
+                    <span>React JS</span>
+                    <div class="bar"><div class="progress" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-item reveal">
+                    <span>UI Design</span>
+                    <div class="bar"><div class="progress" style="width: 90%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="title" data-text="Gallery">Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="project-card reveal">
+                    <div class="project-overlay">
+                        <h3>E-Commerce App</h3>
+                        <p>Advanced UI/UX</p>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-overlay">
+                        <h3>Finance Dashboard</h3>
+                        <p>React & Analytics</p>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-overlay">
+                        <h3>Social Media Tool</h3>
+                        <p>API Integration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-soft">
+        <div class="container">
+            <h2 class="title" data-text="Get In Touch">Connect</h2>
+            <div class="contact-box glass reveal">
+                <form id="contact-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2026 MyBrand. Developed with <i class="fas fa-heart" style="color:red"></i></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
