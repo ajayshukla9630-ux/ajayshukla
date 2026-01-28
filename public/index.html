@@ -3,214 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Developer | Professional Portfolio</title>
+    <title>Ajay Shukla | Red & Black Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
         :root {
-            --primary: #0061ff;
-            --secondary: #60efff;
-            --dark: #1a1a1a;
-            --glass: rgba(255, 255, 255, 0.95);
+            --primary-red: #ff0000;
+            --bg-black: #0a0a0a;
+            --card-bg: #141414;
         }
 
-        html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        
-        body { 
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
-            color: #333; 
-        }
 
-        /* PREMIUM HEADER */
-        .top-banner { 
-            height: 300px; 
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            width: 100%; 
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
-        }
+        body { background-color: var(--bg-black); color: white; scroll-behavior: smooth; }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            padding-top: 25px;
-            position: sticky;
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 2px solid var(--primary-red);
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 40px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
+        .nav-links { display: flex; justify-content: center; list-style: none; }
+        .nav-links li { margin: 0 20px; }
+        .nav-links a { text-decoration: none; color: #fff; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--primary-red); }
+
+        .container { padding: 100px 20px; max-width: 900px; margin: auto; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 30px; color: var(--primary-red); text-transform: uppercase; }
+
+        /* Hero Section */
+        .hero { height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle, #220000 0%, #000 100%); }
+        .blue-tick { color: #fff; background-color: #00acee; font-size: 16px; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; vertical-align: middle; margin-left: 8px; }
+
+        /* About Section */
+        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #333; margin-bottom: 40px; }
+
+        /* Social Links Section (About ke niche) */
+        .social-box { background: #1a1a1a; padding: 20px; border-radius: 10px; display: flex; justify-content: center; gap: 25px; margin-top: 20px; border: 1px dashed var(--primary-red); }
+        .social-box a { font-size: 28px; color: white; transition: 0.3s; }
+        .social-box a:hover { color: var(--primary-red); transform: translateY(-5px); }
+
+        /* Personal Photo Section */
+        .photo-section { margin-top: 50px; }
+        .personal-img { 
+            width: 100%; 
+            max-width: 500px; 
+            border-radius: 20px; 
+            border: 5px solid var(--primary-red); 
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+            transition: 0.5s;
         }
+        .personal-img:hover { transform: scale(1.02); }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
+        /* Skills */
+        .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .skill { background: #000; border: 1px solid var(--primary-red); padding: 8px 20px; border-radius: 50px; font-size: 14px; }
 
-        nav ul li a:hover { background: white; color: var(--primary); }
-
-        /* CONTAINER & CARDS */
-        .container { max-width: 900px; margin: -100px auto 50px; padding: 0 20px; }
-
-        .card { 
-            background: var(--glass); 
-            backdrop-filter: blur(15px);
-            margin-top: 30px; 
-            padding: 40px; 
-            border-radius: 30px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
-            border: 1px solid rgba(255,255,255,0.5);
-        }
-
-        /* HOME SECTION */
-        .home-section { text-align: center; }
-        .profile-img-container {
-            width: 160px;
-            height: 160px;
-            margin: -120px auto 0;
-            position: relative;
-        }
-        .profile-img { 
-            width: 100%; height: 100%; 
-            border-radius: 50%; 
-            border: 7px solid white; 
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        /* SECTION TITLES */
-        h2 { 
-            font-size: 26px;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--primary), #00c6ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            display: inline-block;
-        }
-
-        /* ABOUT DETAILS */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
-        .info-item { background: #f8f9fa; padding: 15px; border-radius: 15px; border-left: 4px solid var(--primary); }
-        .info-item b { color: var(--primary); display: block; margin-bottom: 5px; }
-
-        /* SKILLS LIST */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; text-align: center; }
-        .skill-box { padding: 20px; background: #fff; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
-        .skill-box:hover { transform: translateY(-5px); background: var(--primary); color: white; }
-        .skill-box i { font-size: 35px; margin-bottom: 10px; display: block; }
-
-        /* PROJECTS */
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .project-card { border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .project-card img { width: 100%; height: 180px; object-fit: cover; }
-        .project-info { padding: 15px; }
-        .project-info h3 { font-size: 18px; margin-bottom: 5px; }
-        .project-info p { font-size: 13px; color: #666; }
-
-        /* CONTACT */
-        .contact-list { list-style: none; }
-        .contact-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; font-size: 16px; }
-        .contact-list i { font-size: 20px; color: var(--primary); background: #eef4ff; padding: 12px; border-radius: 50%; }
-
-        @media (max-width: 600px) {
-            .about-grid, .project-grid { grid-template-columns: 1fr; }
-            .top-banner { height: 200px; }
-        }
+        /* Footer */
+        footer { background-color: #000; color: #888; text-align: center; padding: 25px; border-top: 2px solid var(--primary-red); margin-top: 50px; }
+        footer b { color: var(--primary-red); }
     </style>
 </head>
 <body>
 
-    <div class="top-banner">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+    <header>
+        <nav><ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul></nav>
+    </header>
 
-    <div class="container">
-        
-        <div class="card home-section" id="home">
-            <div class="profile-img-container">
-                <img src="ajay-profile.jpg" alt="Ajay Developer" class="profile-img">
-            </div>
-            <h1>Ajay Developer <i class="fas fa-check-circle" style="color: #2196F3;"></i></h1>
-            <p>Full Stack Developer & Student</p>
+    <section id="home" class="hero">
+        <h1 style="font-size: 3.5rem;">Ajay Developer <span class="blue-tick"><i class="fas fa-check"></i></span></h1>
+        <p style="color: #ccc; letter-spacing: 3px;">HTML | CSS | JAVASCRIPT</p>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p>Mera naam <b>Ajay Shukla</b> hai. Main ek modern web developer hoon.</p>
+            <p>Main 2026 mein advanced technologies ka upyog karke behtareen web experience create karta hoon. Coding mera junoon hai.</p>
         </div>
 
-        <div class="card" id="about">
-            <h2>About Me</h2>
-            <p>wellcome! my name is <b>AJAY SHUKLA</b>. Main BCA Ka student hoon aur mujhe web developer aur programming me interest hai aur mujhe social media me bahut aacha knowledge hai.</p>
-            <div class="about-grid">
-                <div class="info-item"><b>Qualification</b> BCA / Computer Science wed developer Student</div>
-                <div class="info-item"><b>Experience</b> i am student and currently building my skills in programming and web developer.</div>
-                <div class="info-item"><b>Address</b> majhuli india</div>
-                <div class="info-item"><b>Interest</b> web Developer,problem solving,programming&coding,social media maneger.</div>
-            </div>
+        <h3 style="margin-bottom: 15px; color: #fff;">Connect With Me</h3>
+        <div class="social-box">
+            <a href="https://instagram.com/YOUR_ID" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/YOUR_ID" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com/in/YOUR_ID" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://youtube.com/YOUR_ID" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
 
-        <div class="card" id="skills">
-            <h2>My Skills & Subjects</h2>
-            <div class="skills-grid">
-                <div class="skill-box"><i class="fab fa-html5" style="color: #E34F26;"></i> HTML5</div>
-                <div class="skill-box"><i class="fab fa-css3-alt" style="color: #1572B6;"></i> CSS3</div>
-                <div class="skill-box"><i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript</div>
-                <div class="skill-box"><i class="fas fa-code" style="color: #61DAFB;"></i> C / C++</div>
-                <div class="skill-box"><i class="fas fa-database" style="color: #4479A1;"></i> SQL Database</div>
-                <div class="skill-box"><i class="fab fa-python" style="color: #3776AB;"></i> Python</div>
-            </div>
+        <div class="photo-section">
+            <h3 style="margin: 30px 0 20px; color: #fff;">My Profile Photo</h3>
+            <img src="https://via.placeholder.com/500x600?text=Apni+Photo+Yaha+Lagayein" alt="Ajay Shukla Personal Photo" class="personal-img">
         </div>
+    </section>
 
-        <div class="card" id="portfolio">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="project1.jpg" alt="Project">
-                    <div class="project-info">
-                        <h3>E-Commerce Site</h3>
-                        <p>A complete online shopping website layout.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="project2.jpg" alt="Project">
-                    <div class="project-info">
-                        <h3>Personal Blog</h3>
-                        <p>Fully responsive blogging platform.</p>
-                    </div>
-                </div>
-            </div>
+    <section id="skills" class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-list">
+            <div class="skill">HTML5 (Advanced)</div>
+            <div class="skill">CSS3 (Animations)</div>
+            <div class="skill">JavaScript (ES6+)</div>
+            <div class="skill">Responsive Design</div>
         </div>
+    </section>
 
-        <div class="card" id="contact" style="margin-bottom: 50px;">
-            <h2>Contact Details</h2>
-            <ul class="contact-list">
-                <li><i class="fas fa-envelope"></i> ajay@example.com</li>
-                <li><i class="fab fa-whatsapp"></i> +91 98XXXXXXXX</li>
-                <li><i class="fab fa-linkedin"></i> linkedin.com/in/ajay-developer</li>
-                <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
-            </ul>
-        </div>
+    <footer>
+        <p>2026 Designed by <b>Ajay Shukla</b></p>
+    </footer>
 
-    </div>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 
 </body>
 </html>
-
