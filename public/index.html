@@ -1,21 +1,152 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Portfolio | 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Ajay Developer | Elite Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- ADVANCED CSS --- */
+        :root {
+            --primary: #007AFF;
+            --dark: #0f172a;
+            --white: #ffffff;
+            --grey: #64748b;
+            --glass: rgba(255, 255, 255, 0.8);
+            --gradient: linear-gradient(135deg, #007AFF 0%, #00d4ff 100%);
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+        /* Navbar */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: var(--glass);
+            backdrop-filter: blur(15px); z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { 
+            text-decoration: none; color: var(--dark); 
+            font-weight: 500; transition: 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 0; background: var(--primary); transition: 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh; display: flex; align-items: center;
+            padding: 0 10%; background: radial-gradient(circle at 90% 10%, #e0f2fe 0%, #fff 50%);
+        }
+
+        .hero-content h1 { font-size: 5rem; font-weight: 800; line-height: 1.1; }
+        .hero-content h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-content p { font-size: 1.2rem; color: var(--grey); margin: 20px 0 40px; max-width: 600px; }
+
+        .btn {
+            padding: 15px 35px; border-radius: 50px; text-decoration: none;
+            font-weight: 600; transition: 0.4s; display: inline-block;
+        }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 10px 20px rgba(0,122,255,0.3); }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,122,255,0.4); }
+
+        /* Section Universal */
+        section { padding: 100px 10%; }
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; font-weight: 800; }
+
+        /* About Section */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-card { 
+            background: var(--glass); padding: 40px; border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Skills Grid */
+        
+        .skills-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px;
+        }
+        .skill-item {
+            background: white; padding: 30px; border-radius: 20px;
+            text-align: center; transition: 0.3s; border: 1px solid #f1f5f9;
+        }
+        .skill-item:hover { transform: scale(1.05); border-color: var(--primary); }
+        .skill-item i { font-size: 3rem; color: var(--primary); margin-bottom: 15px; }
+
+        /* Portfolio */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .project-card {
+            position: relative; height: 350px; border-radius: 30px;
+            overflow: hidden; background: #e2e8f0;
+        }
+        .project-overlay {
+            position: absolute; inset: 0; background: rgba(15, 23, 42, 0.8);
+            display: flex; flex-direction: column; justify-content: center;
+            align-items: center; color: white; opacity: 0; transition: 0.5s;
+            backdrop-filter: blur(5px);
+        }
+        .project-card:hover .project-overlay { opacity: 1; }
+
+        /* Contact Form */
+        .contact-box {
+            max-width: 700px; margin: 0 auto; background: #f8fafc;
+            padding: 50px; border-radius: 40px;
+        }
+        .form-group { margin-bottom: 20px; }
+        input, textarea {
+            width: 100%; padding: 15px; border-radius: 12px;
+            border: 1px solid #e2e8f0; outline: none; font-size: 1rem;
+        }
+        input:focus { border-color: var(--primary); }
+
+        /* Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        footer { text-align: center; padding: 50px; color: var(--grey); border-top: 1px solid #eee; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .about-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-    <div id="progress-container">
-        <div id="progress-bar"></div>
-    </div>
-
-    <nav class="navbar">
-        <div class="logo">MY<span>BRAND</span></div>
+    <nav>
+        <div class="logo">AJAY<span>.DEV</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -23,112 +154,17 @@
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Connect</a></li>
         </ul>
-        <div class="toggle-btn" id="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
     </nav>
 
-    <header id="home" class="hero-section">
+    <header id="home" class="hero">
         <div class="hero-content">
-            <h3 class="reveal">Welcome to my world</h3>
-            <h1 class="reveal">I'm <span id="typewriter"></span></h1>
-            <p class="reveal">Crafting digital experiences with precision and creativity.</p>
-            <div class="hero-btns reveal">
-                <a href="#portfolio" class="btn primary">My Work</a>
-                <a href="#contact" class="btn secondary">Hire Me</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
+            <h1 class="reveal">I am <br><span>Ajay Developer</span></h1>
+            <p class="reveal">Main ek creative full-stack developer hoon jo sundar aur fast websites banata hai. Digital dunia mein aapka swagat hai.</p>
+            <a href="#portfolio" class="btn btn-primary reveal">Check My Work</a>
         </div>
     </header>
 
     <section id="about" class="section">
-        <div class="container">
-            <h2 class="title" data-text="About Me">About Me</h2>
-            <div class="about-grid">
-                <div class="about-card reveal">
-                    <p>Main ek enthusiastic developer hoon jo naye challenges se darta nahi. Safed aur clean design meri pehchan hai. Maine 50+ projects complete kiye hain jo speed aur aesthetics dono mein top hain.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section bg-soft">
-        <div class="container">
-            <h2 class="title" data-text="Expertise">My Skills</h2>
-            <div class="skills-container">
-                <div class="skill-item reveal">
-                    <span>HTML/CSS</span>
-                    <div class="bar"><div class="progress" style="width: 95%;"></div></div>
-                </div>
-                <div class="skill-item reveal">
-                    <span>JavaScript</span>
-                    <div class="bar"><div class="progress" style="width: 85%;"></div></div>
-                </div>
-                <div class="skill-item reveal">
-                    <span>React JS</span>
-                    <div class="bar"><div class="progress" style="width: 80%;"></div></div>
-                </div>
-                <div class="skill-item reveal">
-                    <span>UI Design</span>
-                    <div class="bar"><div class="progress" style="width: 90%;"></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section">
-        <div class="container">
-            <h2 class="title" data-text="Gallery">Portfolio</h2>
-            <div class="portfolio-grid">
-                <div class="project-card reveal">
-                    <div class="project-overlay">
-                        <h3>E-Commerce App</h3>
-                        <p>Advanced UI/UX</p>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-overlay">
-                        <h3>Finance Dashboard</h3>
-                        <p>React & Analytics</p>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-overlay">
-                        <h3>Social Media Tool</h3>
-                        <p>API Integration</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section bg-soft">
-        <div class="container">
-            <h2 class="title" data-text="Get In Touch">Connect</h2>
-            <div class="contact-box glass reveal">
-                <form id="contact-form">
-                    <div class="input-group">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                    </div>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="socials">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-        <p>&copy; 2026 MyBrand. Developed with <i class="fas fa-heart" style="color:red"></i></p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-grid">
+            <div class="about-card reveal">
