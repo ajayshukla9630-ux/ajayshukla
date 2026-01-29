@@ -35,7 +35,7 @@ top:0;
 width:100%;
 background:black;
 border-bottom:2px solid var(--red);
-padding:15px 10%;
+padding:15px 6%;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -49,18 +49,20 @@ color:var(--red);
 font-size:1.6rem;
 }
 
+/* 🔥 CONTACT SAME LINE FIX */
 nav ul{
 list-style:none;
 display:flex;
-gap:20px;
-flex-wrap:wrap;
+gap:18px;
 justify-content:center;
+flex-wrap:nowrap;   /* important */
 }
 
 nav ul li a{
 color:white;
 text-decoration:none;
 font-weight:600;
+font-size:0.95rem;
 }
 
 nav ul li a:hover{
@@ -76,18 +78,17 @@ align-items:center;
 justify-content:center;
 text-align:center;
 background:radial-gradient(circle,#300000,#000);
-padding-top:120px;
+padding-top:140px;
 }
 
 /* PROFILE */
 .profile{
-width:190px;
-height:190px;
+width:180px;
+height:180px;
 border:4px solid var(--red);
 border-radius:50%;
 padding:5px;
 box-shadow:0 0 25px var(--red);
-transform: translateY(-25px);
 }
 
 .profile img{
@@ -97,30 +98,29 @@ border-radius:50%;
 object-fit:cover;
 }
 
-/* NAME + BLUE TICK (FIXED FINAL) */
+/* NAME + BLUE TICK */
 .name{
-margin-top:-10px;
+margin-top:10px;
 }
 
 .name h1{
 font-family:'Orbitron';
-font-size:3rem;
+font-size:2.4rem;   /* 🔥 NAME SMALLER */
 display:inline-flex;
 align-items:center;
 gap:8px;
-white-space:nowrap;   /* 🔥 BLUE TICK FIX */
+white-space:nowrap;
 }
 
 .tick{
 color:var(--blue);
-font-size:1.5rem;
-vertical-align:middle;
+font-size:1.3rem;
 }
 
 /* SUB TITLE */
 .hero p{
 margin-top:8px;
-font-size:1.2rem;
+font-size:1.1rem;
 }
 
 .hero p span{
@@ -135,8 +135,8 @@ gap:18px;
 }
 
 .socials a{
-width:48px;
-height:48px;
+width:46px;
+height:46px;
 border:1px solid var(--red);
 border-radius:50%;
 display:grid;
@@ -239,33 +239,32 @@ color:var(--red);
 /* MOBILE */
 @media (max-width:768px){
 
+.logo{
+font-size:1.4rem;
+}
+
+nav ul li a{
+font-size:0.85rem;
+}
+
 .profile{
 width:150px;
 height:150px;
-transform: translateY(-20px);
 }
 
 .name h1{
-font-size:2.2rem;
+font-size:2rem;   /* mobile smaller */
 }
 
 .tick{
-font-size:1.3rem;
+font-size:1.2rem;
 }
 
 .hero p{
 font-size:1rem;
 }
 
-.socials a{
-width:44px;
-height:44px;
-}
-
-.skill-box{
-grid-template-columns:1fr;
-}
-
+.skill-box,
 .project-grid{
 grid-template-columns:1fr;
 }
@@ -279,11 +278,11 @@ grid-template-columns:1fr;
 <div class="logo">AJAY PRO</div>
 <nav>
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="skills.html">Skills</a></li>
-<li><a href="projects.html">Portfolio</a></li>
-<li><a href="contact.html">Contact</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 </header>
@@ -295,10 +294,7 @@ grid-template-columns:1fr;
 </div>
 
 <div class="name">
-<h1>
-AJAY DEVELOPER
-<i class="fas fa-check-circle tick"></i>
-</h1>
+<h1>AJAY DEVELOPER <i class="fas fa-check-circle tick"></i></h1>
 </div>
 
 <p><span>BCA STUDENT</span> | WEB DEVELOPER</p>
