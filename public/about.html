@@ -1,5 +1,218 @@
-<button onclick="openAbout()">About Section Dekhein</button>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Shukla | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Styling */
+        :root {
+            --primary-red: #ff3131;
+            --dark-bg: #000000;
+            --card-bg: #0f0f0f;
+            --text-gray: #b0b0b0;
+            --border: #222;
+        }
 
-<div id="about-content" style="display: none;">
-    <p>Ye mera About section ka code hai jo click karne par khula!</p>
-</div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+        }
+
+        .portfolio-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(255, 49, 49, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top Heading */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--primary-red);
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 700;
+        }
+
+        /* About Text */
+        .bio-text {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .bio-text b {
+            color: #fff;
+            border-bottom: 2px solid var(--primary-red);
+        }
+
+        /* Section Headings */
+        .section-header {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-header i {
+            color: var(--primary-red);
+        }
+
+        /* Education Timeline */
+        .timeline {
+            position: relative;
+            border-left: 2px solid var(--border);
+            margin-left: 15px;
+            padding-left: 35px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -46px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--primary-red);
+        }
+
+        .date-badge {
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .degree {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .institute {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        /* Skills Badges */
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .skill-btn {
+            background: rgba(255, 49, 49, 0.1);
+            border: 1px solid var(--primary-red);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            transition: 0.4s ease;
+            cursor: pointer;
+        }
+
+        .skill-btn:hover {
+            background: var(--primary-red);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 49, 49, 0.4);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 500px) {
+            .header h1 { font-size: 2rem; }
+            .portfolio-card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="portfolio-card">
+            
+            <div class="header">
+                <h1>About Me</h1>
+            </div>
+
+            <p class="bio-text">
+                Mera naam <b>Ajay Shukla</b> hai. Mai ek <b>Web Developer</b> hoon aur filhaal BCA ki padhai TATA College se kar raha hoon. Mujhe naye-naye ideas par kaam karna aur unhe website aur design ke through real shape dena bahut pasand hai.
+            </p>
+
+            <div class="section-header">
+                <i class="fas fa-graduation-cap"></i> My Education
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="date-badge">2024 - Present</span>
+                    <div class="degree">Bachelor of Computer Applications (BCA)</div>
+                    <div class="institute">TATA College Institute of Technology, Sidhi <br>Madhya Pradesh</div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="date-badge">2023 - 2024</span>
+                    <div class="degree">Intermediate (12th)</div>
+                    <div class="institute">Model School Majhauli, District Sidhi <br>Madhya Pradesh</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <i class="fas fa-code"></i> My Tech Skills
+            </div>
+
+            <div class="skills-wrap">
+                <div class="skill-btn">HTML5</div>
+                <div class="skill-btn">CSS3</div>
+                <div class="skill-btn">JavaScript</div>
+                <div class="skill-btn">React.js</div>
+                <div class="skill-btn">Web Design</div>
+                <div class="skill-btn">Responsive UI</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
