@@ -3,223 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Developer | Verified Portfolio</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
+    <title>Ajay Shukla | Red & Black Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
         :root {
-            --neon-red: #ff0000;
-            --dark-red: #3d0000;
-            --bg-black: #080808;
-            --blue-tick: #1DA1F2;
+            --primary-red: #ff0000;
+            --bg-black: #0a0a0a;
+            --card-bg: #141414;
         }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-        body {
-            background-color: var(--bg-black);
-            color: white;
-            overflow-x: hidden;
-        }
+        body { background-color: var(--bg-black); color: white; scroll-behavior: smooth; }
 
-        /* --- 1. Header with Tabs --- */
         header {
-            position: fixed; top: 0; width: 100%;
-            padding: 20px 10%;
             background: rgba(0, 0, 0, 0.9);
-            border-bottom: 2px solid var(--neon-red);
-            display: flex; justify-content: space-between;
-            align-items: center; z-index: 1000;
-            box-shadow: 0 0 15px var(--neon-red);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-red);
         }
 
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--neon-red); font-weight: 900; font-size: 1.5rem;
+        .nav-links { display: flex; justify-content: center; list-style: none; }
+        .nav-links li { margin: 0 20px; }
+        .nav-links a { text-decoration: none; color: #fff; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--primary-red); }
+
+        .container { padding: 100px 20px; max-width: 900px; margin: auto; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 30px; color: var(--primary-red); text-transform: uppercase; }
+
+        /* Hero Section */
+        .hero { height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle, #220000 0%, #000 100%); }
+        .blue-tick { color: #fff; background-color: #00acee; font-size: 16px; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; vertical-align: middle; margin-left: 8px; }
+
+        /* About Section */
+        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #333; margin-bottom: 40px; }
+
+        /* Social Links Section (About ke niche) */
+        .social-box { background: #1a1a1a; padding: 20px; border-radius: 10px; display: flex; justify-content: center; gap: 25px; margin-top: 20px; border: 1px dashed var(--primary-red); }
+        .social-box a { font-size: 28px; color: white; transition: 0.3s; }
+        .social-box a:hover { color: var(--primary-red); transform: translateY(-5px); }
+
+        /* Personal Photo Section */
+        .photo-section { margin-top: 50px; }
+        .personal-img { 
+            width: 100%; 
+            max-width: 500px; 
+            border-radius: 20px; 
+            border: 5px solid var(--primary-red); 
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+            transition: 0.5s;
         }
+        .personal-img:hover { transform: scale(1.02); }
 
-        nav ul {
-            display: flex; list-style: none; gap: 25px;
-        }
+        /* Skills */
+        .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .skill { background: #000; border: 1px solid var(--primary-red); padding: 8px 20px; border-radius: 50px; font-size: 14px; }
 
-        nav ul li a {
-            text-decoration: none; color: white;
-            font-weight: 600; font-size: 1rem;
-            transition: 0.3s; text-transform: uppercase;
-        }
-
-        nav ul li a:hover {
-            color: var(--neon-red);
-            text-shadow: 0 0 10px var(--neon-red);
-        }
-
-        /* --- 2. Hero Section --- */
-        .hero {
-            height: 100vh;
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            text-align: center; background: radial-gradient(circle, var(--dark-red) 0%, var(--bg-black) 100%);
-        }
-
-        .profile-img-container {
-            width: 200px; height: 200px;
-            border: 4px solid var(--neon-red);
-            border-radius: 50%; padding: 5px;
-            margin-bottom: 20px; box-shadow: 0 0 30px var(--neon-red);
-            position: relative; overflow: hidden;
-            background: #111; display: flex; align-items: center; justify-content: center;
-        }
-
-        .profile-img-container img {
-            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
-        }
-
-        .name-wrapper {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-        }
-
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem; text-transform: uppercase;
-            letter-spacing: 5px; color: #fff;
-        }
-
-        .blue-tick {
-            color: var(--blue-tick); font-size: 2.5rem;
-            filter: drop-shadow(0 0 5px var(--blue-tick));
-        }
-
-        .hero p {
-            font-size: 1.5rem; color: #ccc; margin-top: 10px;
-            letter-spacing: 2px;
-        }
-
-        .hero .red-text {
-            color: var(--neon-red); font-weight: bold;
-        }
-
-        /* --- 3. Advanced Grid (6 Dabba) --- */
-        .grid-section {
-            padding: 100px 10%;
-        }
-
-        .section-title {
-            text-align: center; font-size: 2.5rem; margin-bottom: 50px;
-            font-family: 'Orbitron', sans-serif; color: var(--neon-red);
-            text-shadow: 0 0 10px var(--neon-red);
-        }
-
-        .photo-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
-        }
-
-        .dabba {
-            height: 350px; background: #111;
-            border: 1px solid var(--dark-red);
-            border-radius: 15px; position: relative;
-            overflow: hidden; transition: 0.5s;
-            cursor: pointer;
-        }
-
-        .dabba:hover {
-            transform: scale(1.05);
-            border-color: var(--neon-red);
-            box-shadow: 0 0 25px var(--neon-red);
-        }
-
-        .dabba img {
-            width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.5s;
-        }
-
-        .dabba:hover img { opacity: 1; }
-
-        .upload-placeholder {
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center; pointer-events: none;
-        }
-
-        /* --- 4. Social Links --- */
-        .socials {
-            margin-top: 30px; display: flex; gap: 20px;
-        }
-
-        .social-btn {
-            width: 50px; height: 50px; border: 1px solid var(--neon-red);
-            display: grid; place-items: center; border-radius: 50%;
-            color: white; text-decoration: none; transition: 0.4s;
-        }
-
-        .social-btn:hover {
-            background: var(--neon-red); box-shadow: 0 0 20px var(--neon-red);
-            transform: rotate(360deg);
-        }
-
+        /* Footer */
+        footer { background-color: #000; color: #888; text-align: center; padding: 25px; border-top: 2px solid var(--primary-red); margin-top: 50px; }
+        footer b { color: var(--primary-red); }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">AJAY PRO</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <nav><ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul></nav>
     </header>
 
-    <section class="hero">
-        <div class="profile-img-container">
-            <img src="https://via.placeholder.com/200" alt="Ajay Shukla">
+    <section id="home" class="hero">
+        <h1 style="font-size: 3.5rem;">Ajay Developer <span class="blue-tick"><i class="fas fa-check"></i></span></h1>
+        <p style="color: #ccc; letter-spacing: 3px;">HTML | CSS | JAVASCRIPT</p>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p>Mera naam <b>Ajay Shukla</b> hai.mai ek web Developer hoon aur filhaal BCA ki padhai TATA Colleage,sidhi se kar raha hoon.mujhe naye-naye ideas par kamm karna aur unhe website aur design ke through real shape dena bahut pasand hai.</p>
+        
         </div>
 
-        <div class="name-wrapper">
-            <h1>AJAY DEVELOPER</h1>
-            <i class="fas fa-check-circle blue-tick"></i>
+        <h3 style="margin-bottom: 15px; color: #fff;">Connect With Me</h3>
+        <div class="social-box">
+            <a href="https://instagram.com/YOUR_ID" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/YOUR_ID" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com/in/YOUR_ID" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://youtube.com/YOUR_ID" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
 
-        <p><span class="red-text">BCA STUDENT</span> | WEB DEVELOPER</p>
-
-        <div class="socials">
-            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+        <div class="photo-section">
+            <h3 style="margin: 30px 0 20px; color: #fff;">My Profile Photo</h3>
+            <img src="https://via.placeholder.com/500x600?text=Apni+Photo+Yaha+Lagayein" alt="Ajay Shukla Personal Photo" class="personal-img">
         </div>
     </section>
 
-    <section class="grid-section">
-        <h2 class="section-title">PROJECT GALLERY</h2>
-        <div class="photo-grid">
-            <div class="dabba"><div class="upload-placeholder"><i class="fas fa-plus"></i><br>Add Image</div></div>
-            <div class="dabba"><div class="upload-placeholder"><i class="fas fa-plus"></i><br>Add Image</div></div>
-            <div class="dabba"><div class="upload-placeholder"><i class="fas fa-plus"></i><br>Add Image</div></div>
-            <div class="dabba"><div class="upload-placeholder"><i class="fas fa-plus"></i><br>Add Image</div></div>
-            <div class="dabba"><div class="upload-placeholder"><i class="fas fa-plus"></i><br>Add Image</div></div>
-            <div class="dabba"><div class="upload-placeholder"><i class="fas fa-plus"></i><br>Add Image</div></div>
+    <section id="skills" class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-list">
+            
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: var(--neon-red); font-size: 0.8rem;">
-        &copy; 2026 AJAY SHUKLA | ALL RIGHTS RESERVED
+    <footer>
+        <p>2026| Designed by <b>Ajay Shukla</b></p>
     </footer>
 
     <script>
-        // Smooth scroll effect for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                console.log("Navigating to: " + this.innerText);
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
+
 </body>
 </html>
