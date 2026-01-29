@@ -49,13 +49,11 @@ color:var(--red);
 font-size:1.6rem;
 }
 
-/* 🔥 CONTACT SAME LINE FIX */
 nav ul{
 list-style:none;
 display:flex;
 gap:18px;
 justify-content:center;
-flex-wrap:nowrap;   /* important */
 }
 
 nav ul li a{
@@ -98,16 +96,17 @@ border-radius:50%;
 object-fit:cover;
 }
 
-/* NAME + BLUE TICK */
+/* NAME + TICK (DESKTOP PERFECT) */
 .name{
 margin-top:10px;
 }
 
 .name h1{
 font-family:'Orbitron';
-font-size:2.4rem;   /* 🔥 NAME SMALLER */
-display:inline-flex;
+font-size:2.4rem;
+display:flex;
 align-items:center;
+justify-content:center;
 gap:8px;
 white-space:nowrap;
 }
@@ -117,17 +116,7 @@ color:var(--blue);
 font-size:1.3rem;
 }
 
-/* SUB TITLE */
-.hero p{
-margin-top:8px;
-font-size:1.1rem;
-}
-
-.hero p span{
-color:var(--red);
-}
-
-/* SOCIAL ICONS */
+/* SOCIAL */
 .socials{
 margin-top:22px;
 display:flex;
@@ -160,10 +149,14 @@ background:#0f0f0f;
 text-align:center;
 }
 
-#about h2{
+#about h2,
+#skills h2,
+#projects h2,
+#contact h2{
 font-family:'Orbitron';
 color:var(--red);
-margin-bottom:15px;
+margin-bottom:20px;
+text-align:center;
 }
 
 #about p{
@@ -173,10 +166,7 @@ color:#ccc;
 line-height:1.8;
 }
 
-#skills{
-text-align:center;
-}
-
+/* SKILLS */
 .skill-box{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
@@ -188,29 +178,32 @@ margin-top:30px;
 padding:20px;
 border:1px solid var(--red);
 border-radius:10px;
+text-align:center;
 }
 
+/* MY PROFILE PHOTOS */
 #projects{
 background:#0f0f0f;
 }
 
-.project-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.photo-gallery{
 margin-top:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
 }
 
-.project{
-height:180px;
-border:1px solid var(--red);
-border-radius:10px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#777;
+.photo-gallery img{
+width:100%;
+height:340px;
+object-fit:cover;
+border-radius:22px;
+border:2px solid var(--red);
+box-shadow:0 0 20px rgba(255,0,0,0.5);
+transition:0.3s;
 }
 
+/* CONTACT */
 #contact{
 text-align:center;
 }
@@ -236,15 +229,11 @@ padding:30px;
 color:var(--red);
 }
 
-/* MOBILE */
+/* 🔥 MOBILE FIX (AJAY DEVELOPER + BLUE TICK PASS ME) */
 @media (max-width:768px){
 
 .logo{
 font-size:1.4rem;
-}
-
-nav ul li a{
-font-size:0.85rem;
 }
 
 .profile{
@@ -253,20 +242,25 @@ height:150px;
 }
 
 .name h1{
-font-size:2rem;   /* mobile smaller */
+font-size:1.9rem;
+display:flex;
+flex-direction:row;      /* 🔥 SAME LINE */
+align-items:center;
+justify-content:center;
+gap:6px;                 /* 🔥 PASS ME */
+white-space:nowrap;
 }
 
 .tick{
-font-size:1.2rem;
+font-size:1.15rem;
 }
 
-.hero p{
-font-size:1rem;
+.photo-gallery{
+grid-template-columns:repeat(2,1fr);
 }
 
-.skill-box,
-.project-grid{
-grid-template-columns:1fr;
+.photo-gallery img{
+height:300px;
 }
 }
 </style>
@@ -275,12 +269,12 @@ grid-template-columns:1fr;
 <body>
 
 <header>
-<div class="logo">AJAY PRO</div>
+<div class="logo">Ajay Developer</div>
 <nav>
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
-<li><a href="skills.html">Skills</a></li>
+<li><a href="skills html">Skills</a></li>
 <li><a href="projects.html">Portfolio</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
@@ -288,23 +282,21 @@ grid-template-columns:1fr;
 </header>
 
 <section class="hero" id="home">
-
 <div class="profile">
-<img src="profile.jpg" alt="Ajay Shukla">
+<img src="profile.jpg" alt="Ajay">
 </div>
 
 <div class="name">
 <h1>AJAY DEVELOPER <i class="fas fa-check-circle tick"></i></h1>
 </div>
 
-<p><span>BCA STUDENT</span> | WEB DEVELOPER</p>
+<p><span style="color:red;">BCA STUDENT</span> | WEB DEVELOPER</p>
 
 <div class="socials">
 <a href="#"><i class="fab fa-instagram"></i></a>
 <a href="#"><i class="fab fa-facebook-f"></i></a>
 <a href="#"><i class="fab fa-youtube"></i></a>
 </div>
-
 </section>
 
 <section id="about">
@@ -312,41 +304,43 @@ grid-template-columns:1fr;
 <p>
 Mera naam <b>Ajay Shukla</b> hai.  
 Mai <b>BCA student</b> hoon aur mujhe <b>Web Development</b> me interest hai.  
-HTML, CSS, JavaScript ke sath creative websites banana pasand karta hoon.
+HTML, CSS, JavaScript ke sath creative websites banana pasand karta hoon.aur social media ka manager hu"
 </p>
 </section>
 
 <section id="skills">
-<h2 style="color:red;font-family:Orbitron;">SKILLS</h2>
+<h2>SKILLS</h2>
 <div class="skill-box">
 <div class="skill">HTML</div>
 <div class="skill">CSS</div>
 <div class="skill">JavaScript</div>
 <div class="skill">GitHub</div>
+<div class="skill">social media management</div>
 <div class="skill">Responsive Design</div>
 </div>
 </section>
 
 <section id="projects">
-<h2 style="color:red;font-family:Orbitron;text-align:center;">PROJECTS</h2>
-<div class="project-grid">
-<div class="project">Project 1</div>
-<div class="project">Project 2</div>
-<div class="project">Project 3</div>
-<div class="project">Project 4</div>
+<h2>MY PROFILE PHOTOS</h2>
+<div class="photo-gallery">
+<img src="p1.jpg">
+<img src="p2.jpg">
+<img src="p3.jpg">
+<img src="p4.jpg">
+<img src="p5.jpg">
+<img src="p6.jpg">
 </div>
 </section>
 
 <section id="contact">
-<h2 style="color:red;font-family:Orbitron;">CONTACT</h2>
+<h2>CONTACT</h2>
 <p>Email: ajayshukla@email.com</p>
 <a href="mailto:ajayshukla@email.com">Send Email</a>
 </section>
 
 <footer>
-© 2026|Designed by AJAY SHUKLA
+© 2026 | Designed by Ajay shukla
 </footer>
 
 </body>
 </html>
-
