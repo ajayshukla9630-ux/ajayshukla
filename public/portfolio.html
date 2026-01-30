@@ -23,9 +23,13 @@
     font-family:'Poppins',sans-serif;
 }
 
+/* 👇 BODY FLEX */
 body{
     background:var(--dark);
     color:var(--text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
 /* ===== PURE BLACK HEADER ===== */
@@ -50,6 +54,7 @@ body{
     max-width:900px;
     margin:auto;
     padding:25px 20px 60px;
+    width:100%;
 }
 
 /* HEADING */
@@ -167,11 +172,11 @@ body{
     border:1px solid #333;
 }
 
-/* FOOTER */
+/* 👇 FOOTER EK-DAM NICHE */
 footer{
+    margin-top:auto; /* 🔥 magic line */
     text-align:center;
-    color:#aaa;
-    margin-top:50px;
+    padding:25px 0;
     font-size:14px;
 }
 footer span{
@@ -181,7 +186,6 @@ footer span{
 </head>
 <body>
 
-<!-- PURE BLACK BACK TO HOME (WORKING) -->
 <div class="header-black">
     <a href="index.html">← Back to Home</a>
 </div>
@@ -227,14 +231,15 @@ footer span{
     </div>
 </div>
 
+</div>
+
 <footer>
-    © 2026 <span>Designed by Ajay Shukla</span>
+    <span>© 2026 Designed by Ajay Shukla</span>
 </footer>
 
-</div>
 </body>
 </html>
 
 
 
-
+    
